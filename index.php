@@ -1,538 +1,405 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lynn Margarett M. Ocharon - Portfolio</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lynn Margarett M. Ocharon | Portfolio</title>
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            background: #c5edc8;
-            color: #2d5a2f;
-            overflow-x: hidden;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1.5rem 5%;
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(10px);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            animation: slideDown 0.5s ease;
-        }
-
-        @keyframes slideDown {
-            from { transform: translateY(-100px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
-
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            letter-spacing: -1px;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: #2d5a2f;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s;
-            position: relative;
-        }
-
-        .nav-links a:hover {
-            transform: translateY(-2px);
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: #5a9e5f;
-            transition: width 0.3s;
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        .hero {
-            text-align: center;
-            padding: 6rem 5% 4rem;
-            animation: fadeInUp 0.8s ease;
-            background-image: url('background.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            position: relative;
-            min-height: 600px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.3);
-            z-index: 0;
-        }
-
-        .hero > * {
-            position: relative;
-            z-index: 1;
-        }
-
-        @keyframes fadeInUp {
-            from { transform: translateY(30px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
-
-        .profile-photo {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            margin: 0 auto 2rem;
-            border: 5px solid rgba(255, 255, 255, 0.3);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
-            background: rgba(255, 255, 255, 0.1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 5rem;
-            animation: float 3s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-
-        h1 {
-            font-size: 4rem;
-            margin-bottom: 1rem;
-            background: linear-gradient(45deg, #fff, #f0f0f0);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            line-height: 1.2;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        }
-
-        .role {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            opacity: 0.95;
-            color: #fff;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-        }
-
-        .subtitle {
-            font-size: 1.2rem;
-            margin-bottom: 3rem;
-            opacity: 0.95;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-            color: #fff;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 1.5rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-bottom: 2rem;
-        }
-
-        .btn {
-            padding: 1rem 2.5rem;
-            border: none;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .btn-primary {
-            background: #fff;
-            color: #667eea;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
-        }
-
-        .btn-secondary {
-            background: rgba(255, 255, 255, 0.2);
-            color: #fff;
-            border: 2px solid rgba(255, 255, 255, 0.5);
-        }
-
-        .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.3);
-            transform: translateY(-3px);
-        }
-
-        .info-section {
-            background: rgba(0, 0, 0, 0.2);
-            padding: 3rem 5%;
-        }
-
-        .info-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-
-        .info-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            padding: 2rem;
-            border-radius: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: all 0.3s;
-        }
-
-        .info-card:hover {
-            transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.15);
-        }
-
-        .info-icon {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            display: block;
-        }
-
-        .info-card h3 {
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
-            opacity: 0.8;
-        }
-
-        .info-card p {
-            font-size: 1.1rem;
-            line-height: 1.6;
-        }
-
-        .about-section {
-            padding: 4rem 5%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .about-section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            text-align: center;
-        }
-
-        .about-content {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            padding: 2.5rem;
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            font-size: 1.2rem;
-            line-height: 1.8;
-            text-align: center;
-        }
-
-        .education-section {
-            background: rgba(0, 0, 0, 0.2);
-            padding: 4rem 5%;
-        }
-
-        .education-section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            text-align: center;
-        }
-
-        .education-timeline {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-            column-gap: 3rem;
-        }
-
-        .education-item {
-            background: rgba(255, 255, 255, 0.6);
-            backdrop-filter: blur(10px);
-            padding: 2rem 2.5rem;
-            margin-bottom: 0;
-            border-radius: 15px;
-            border-left: 4px solid #5a9e5f;
-            transition: all 0.3s;
-            animation: fadeIn 0.8s ease forwards;
-            opacity: 0;
-            font-size: 1.1rem;
-        }
-
-        .education-item strong {
-            display: block;
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
-            color: #2d5a2f;
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-        .education-item:nth-child(1) { animation-delay: 0.1s; }
-        .education-item:nth-child(2) { animation-delay: 0.2s; }
-        .education-item:nth-child(3) { animation-delay: 0.3s; }
-        .education-item:nth-child(4) { animation-delay: 0.4s; }
-        .education-item:nth-child(5) { animation-delay: 0.5s; }
-        .education-item:nth-child(6) { animation-delay: 0.6s; }
-        .education-item:nth-child(7) { animation-delay: 0.7s; }
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #1f2d16;
+    color: #f2f2f2;
+}
 
-        @keyframes fadeIn {
-            to { opacity: 1; }
-        }
+/* NAVIGATION */
+nav {
+    position: sticky;
+    top: 0;
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(10px);
+    padding: 1rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
 
-        .education-item:hover {
-            transform: translateX(10px);
-            background: rgba(255, 255, 255, 0.8);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-        }
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
 
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            padding: 4rem 5%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+}
 
-        .features h2 {
-            grid-column: 1 / -1;
-            font-size: 2.5rem;
-            text-align: center;
-            margin-bottom: 1rem;
-        }
+nav a:hover {
+    color: #a8d5a2;
+}
 
-        .feature-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            padding: 2.5rem;
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: all 0.3s;
-            text-align: center;
-        }
+/* HERO */
+.hero {
+    background: url("background.jpg") center/cover fixed;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+}
 
-        .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-            background: rgba(255, 255, 255, 0.15);
-        }
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+}
 
-        .feature-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            display: block;
-        }
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
 
-        .feature-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
+.profile-photo {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #fff;
+    margin-bottom: 1.5rem;
+}
 
-        .feature-card p {
-            opacity: 0.9;
-            line-height: 1.6;
-        }
+.hero h1 {
+    font-size: 3rem;
+}
 
-        footer {
-            text-align: center;
-            padding: 3rem 5%;
-            background: rgba(0, 0, 0, 0.2);
-            margin-top: 4rem;
-        }
+.hero p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
 
-        footer p {
-            opacity: 0.7;
-        }
+/* SECTIONS */
+section {
+    padding: 4rem 5%;
+}
 
-        @media (max-width: 768px) {
-            .education-timeline{
-                grid-template-columns: 1fr;
-            }
+/* INFORMATION */
+.info-grid {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
 
-            .nav-links {
-                gap: 1rem;
-                font-size: 0.9rem;
-            }
+.info-box {
+    background: rgba(255,255,255,0.08);
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    transition: 0.3s;
+}
 
-            .info-container {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+.info-box:hover {
+    transform: translateY(-5px);
+    background: rgba(255,255,255,0.15);
+}
+
+.info-icon {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+}
+
+/* ABOUT */
+.about-wrapper {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.about-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.about-photos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.about-photos img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* EDUCATION */
+/* EDUCATION */
+.education-grid {
+    max-width: 1000px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    column-gap: 3rem;
+}
+
+.education-item {
+    background: rgba(255,255,255,0.08);
+    padding: 2rem 2.5rem;
+    border-left: 5px solid #8bcf88;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    transition: 0.3s;
+}
+
+.education-item:hover {
+    background: rgba(255,255,255,0.15);
+    transform: translateX(10px);
+}
+
+.education-item strong {
+    display: block;
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: #a8d5a2;
+}
+
+.education-item p {
+    font-size: 1rem;
+    opacity: 0.9;
+    margin: 0;
+}
+
+.edu-icon {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    margin-bottom: 0.8rem;
+    border-radius: 8px;
+}
+
+/* INTERESTS */
+.interest-grid {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.interest-card {
+    background: rgba(255,255,255,0.08);
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.interest-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-top: 1rem;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 2rem;
+    background: rgba(0,0,0,0.6);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .about-wrapper {
+        grid-template-columns: 1fr;
+    }
+    
+    .education-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
 </head>
+
 <body>
-    <nav>
-        <div class="logo">Personal Profile</div>
-        <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#info">Info</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#interests">Interests</a></li>
-        </ul>
-    </nav>
 
-    <section class="hero">
-        <img src="profile.jpg" alt="Lynn Ocharon" class="profile-photo" style="object-fit: cover;">
+<nav>
+    <h3>Personal Profile</h3>
+    <ul>
+        <li><a href="#info">Info</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#interests">Interests</a></li>
+    </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-content">
+        <img src="profile.jpg" class="profile-photo">
         <h1>Lynn Margarett M. Ocharon</h1>
-        <p class="role">IT Student | Technology Enthusiast</p>
-        <p class="subtitle">A motivated student passionate about learning technology and improving programming skills</p>
-        <div class="cta-buttons">
-            <a href="mailto:ocharon.lynnmargarett@gmail.com" class="btn btn-primary">Get in Touch</a>
-            <a href="#education" class="btn btn-secondary">View Education</a>
-        </div>
-    </section>
+        <p>BSIT Student | Technology Enthusiast</p>
+    </div>
+</section>
 
-    <section class="info-section" id="info">
-        <div class="info-container">
-            <div class="info-card">
-                <span class="info-icon">🎓</span>
-                <h3>Course</h3>
-                <p>Bachelor of Science in Information Technology (BSIT)</p>
-            </div>
-            <div class="info-card">
-                <span class="info-icon">🏫</span>
-                <h3>School</h3>
-                <p>University of Science and Technology of Southern Philippines (USTP)</p>
-            </div>
-            <div class="info-card">
-                <span class="info-icon">📚</span>
-                <h3>Section</h3>
-                <p>IT3R11</p>
-            </div>
-            <div class="info-card">
-                <span class="info-icon">🎂</span>
-                <h3>Age</h3>
-                <p>21 years old</p>
-            </div>
-            <div class="info-card">
-                <span class="info-icon">📱</span>
-                <h3>Contact</h3>
-                <p>09565218332</p>
-            </div>
-            <div class="info-card">
-                <span class="info-icon">✉️</span>
-                <h3>Email</h3>
-                <p>ocharon.lynnmargarett@gmail.com</p>
-            </div>
-            <div class="info-card">
-                <span class="info-icon">💬</span>
-                <h3>Facebook</h3>
-                <p>Marga Metillo Ocharon</p>
-            </div>
-            <div class="info-card">
-                <span class="info-icon">🎨</span>
-                <h3>Hobbies</h3>
-                <p>Nature & Watching Kdrama's</p>
-            </div>
+<!-- INFO -->
+<section id="info">
+    <div class="info-grid">
+        <div class="info-box">
+            <img src="course.jpg" class="info-icon" alt="Course">
+            <h3>Course</h3>
+            <p>BSIT</p>
         </div>
-    </section>
-
-    <section class="about-section" id="about">
-        <h2>About Me</h2>
-        <div class="about-content">
-            I am a motivated student who is passionate about learning technology and improving my programming skills. Currently pursuing my Bachelor's degree in Information Technology at USTP, I'm dedicated to expanding my knowledge and staying up-to-date with the latest technological advancements.
+        <div class="info-box">
+            <img src="ustp.jpg" class="info-icon" alt="School">
+            <h3>School</h3>
+            <p>USTP</p>
         </div>
-    </section>
-
-    <section class="education-section" id="education">
-        <h2>Education Background</h2>
-        <div class="education-timeline">
-            <div class="education-item">
-                <strong>🌱 Nursery</strong><br>
-                Bayacabac, Maribojoc, Bohol
-            </div>
-            <div class="education-item">
-                <strong>📖 Preschool</strong><br>
-                Bonbon, Cagayan De Oro City
-            </div>
-            <div class="education-item">
-                <strong>📚 Grade 1 - 5</strong><br>
-                Bonbon Elementary School CDO
-            </div>
-            <div class="education-item">
-                <strong>📚 Grade 6</strong><br>
-                Bayacabac Elementary School Bohol
-            </div>
-            <div class="education-item">
-                <strong>🏫 High School</strong><br>
-                Dr. Cecilio Putong National High School
-            </div>
-            <div class="education-item">
-                <strong>🎓 Senior High</strong><br>
-                Dr. Cecilio Putong National High School
-            </div>
-            <div class="education-item">
-                <strong>🎓 College (1st - 3rd year)</strong><br>
-                University of Science and Technology of Southern Philippines
-            </div>
+        <div class="info-box">
+            <img src="section.jpg" class="info-icon" alt="Section">
+            <h3>Section</h3>
+            <p>IT3R11</p>
         </div>
-    </section>
+        <div class="info-box">
+            <img src="age.jpg" class="info-icon" alt="Age">
+            <h3>Age</h3>
+            <p>21</p>
+        </div>
+        <div class="info-box">
+            <img src="contact.jpg" class="info-icon" alt="Contact">
+            <h3>Contact</h3>
+            <p>09565218332</p>
+        </div>
+        <div class="info-box">
+            <img src="email.jpg" class="info-icon" alt="Email">
+            <h3>Email</h3>
+            <p>ocharon.lynnmargarett@gmail.com</p>
+        </div>
+        <div class="info-box">
+            <img src="facebook.jpg" class="info-icon" alt="Facebook">
+            <h3>Facebook</h3>
+            <p>Marga Metillo Ocharon</p>
+        </div>
+        <div class="info-box">
+            <img src="hobbies.jpg" class="info-icon" alt="Hobbies">
+            <h3>Hobbies</h3>
+            <p>Nature & K-Dramas</p>
+        </div>
+    </div>
+</section>
 
-    <section class="features" id="interests">
-        <h2>Interests & Passions</h2>
-        <div class="feature-card">
-            <span class="feature-icon">💻</span>
+<!-- ABOUT -->
+<section id="about">
+    <div class="about-wrapper">
+        <div class="about-text">
+            <h2>About Me</h2>
+            <p>
+                I am a motivated student who is passionate about learning technology
+                and improving my programming skills. Currently pursuing my Bachelor's
+                degree in Information Technology at USTP.
+            </p>
+        </div>
+        <div class="about-photos">
+            <img src="about1.jpg">
+            <img src="about2.jpg">
+            <img src="about3.jpg">
+            <img src="about4.jpg">
+        </div>
+    </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+    <h2 style="text-align:center; margin-bottom:2rem;">Education Background</h2>
+    <div class="education-grid">
+        <div class="education-item">
+            <img src="bayacabac.jpg" class="edu-icon" alt="Nursery">
+            <strong>Nursery</strong>
+            <p>Bayacabac, Maribojoc, Bohol</p>
+        </div>
+        <div class="education-item">
+            <img src="bonbon.jpg" class="edu-icon" alt="Preschool">
+            <strong>Preschool</strong>
+            <p>Bonbon, CDO</p>
+        </div>
+        <div class="education-item">
+            <img src="bonbon.jpg" class="edu-icon" alt="Elementary">
+            <strong>Grade 1–5</strong>
+            <p>Bonbon Elementary School</p>
+        </div>
+        <div class="education-item">
+            <img src="bayacabac.jpg" class="edu-icon" alt="Elementary">
+            <strong>Grade 6</strong>
+            <p>Bayacabac Elementary School</p>
+        </div>
+        <div class="education-item">
+            <img src="dcpnhs.jpg" class="edu-icon" alt="High School">
+            <strong>High School</strong>
+            <p>Dr. Cecilio Putong NHS</p>
+        </div>
+        <div class="education-item">
+            <img src="dcpnhs.jpg" class="edu-icon" alt="Senior High">
+            <strong>Senior High</strong>
+            <p>Dr. Cecilio Putong NHS</p>
+        </div>
+        <div class="education-item">
+            <img src="ustp.jpg" class="edu-icon" alt="College">
+            <strong>College</strong>
+            <p>USTP (1st–3rd Year)</p>
+        </div>
+    </div>
+</section>
+
+<!-- INTERESTS -->
+<section id="interests">
+    <h2 style="text-align:center; margin-bottom:2rem;">Interests & Passions</h2>
+    <div class="interest-grid">
+        <div class="interest-card">
             <h3>Technology</h3>
             <p>Still learning, still evolving.</p>
+            <img src="technology.jpg">
         </div>
-        <div class="feature-card">
-            <span class="feature-icon">🌿</span>
+        <div class="interest-card">
             <h3>Nature</h3>
             <p>Nature is where my heart feels alive.</p>
+            <img src="nature.jpg">
         </div>
-        <div class="feature-card">
-            <span class="feature-icon">📺</span>
+        <div class="interest-card">
             <h3>K-Dramas</h3>
             <p>My comfort zone is a warm blanket and a K-drama.</p>
+            <img src="kdrama.jpg">
         </div>
-    </section>
+    </div>
+</section>
 
-    <footer>
-        <p>&copy; 2026 Lynn Margarett M. Ocharon. All rights reserved.</p>
-    </footer>
+<footer>
+    <p>© 2026 Lynn Margarett M. Ocharon</p>
+</footer>
+
 </body>
 </html>
