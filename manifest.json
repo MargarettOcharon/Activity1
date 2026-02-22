@@ -1,0 +1,17 @@
+{
+  "name": "Lynn Margarett M. Ocharon Portfolio",
+  "short_name": "Lynn Portfolio",
+  "description": "Personal portfolio of Lynn Margarett M. Ocharon",
+  "start_url": "/Activity1/index.php",
+  "display": "standalone",
+  "background_color": "#1f2d16",
+  "theme_color": "#1f2d16",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "profile.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg"
+    }
+  ]
+}
