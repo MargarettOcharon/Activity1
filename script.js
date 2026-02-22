@@ -120,3 +120,107 @@ function showModal(title, content) {
         }
     });
 }
+
+// About Me Photos - Clickable
+const aboutPhotos = [
+    {
+        title: "About Photo 1",
+        description: "This photo represents my journey and experiences. It captures a special moment that reflects who I am and what I value in life."
+    },
+    {
+        title: "About Photo 2",
+        description: "Another glimpse into my life and personality. This image shows the different sides of me and my adventures."
+    },
+    {
+        title: "About Photo 3",
+        description: "A memorable moment that I cherish. This photo holds special meaning and represents an important part of my story."
+    },
+    {
+        title: "About Photo 4",
+        description: "Capturing the essence of my experiences. This image reflects my growth and the journey I've been on."
+    }
+];
+
+// Add click events to about photos
+document.querySelectorAll('.about-photos img').forEach((img, index) => {
+    img.style.cursor = 'pointer';
+    img.style.transition = 'transform 0.3s';
+    
+    img.addEventListener('mouseenter', function() {
+        this.style.transform = 'scale(1.05)';
+    });
+    
+    img.addEventListener('mouseleave', function() {
+        this.style.transform = 'scale(1)';
+    });
+    
+    img.addEventListener('click', function() {
+        const data = aboutPhotos[index];
+        showImageModal(this.src, data.title, data.description);
+    });
+});
+
+// Interest Photos - Clickable
+const interestPhotos = [
+    {
+        title: "Technology Passion",
+        description: "Technology is my passion. I love learning about programming, software development, and exploring new tech innovations. This is where I see my future career growing."
+    },
+    {
+        title: "Love for Nature",
+        description: "Nature brings me peace and inspiration. I enjoy spending time outdoors, appreciating the beauty of the natural world. It helps me relax and recharge."
+    },
+    {
+        title: "K-Drama Enthusiast",
+        description: "K-Dramas are my comfort zone. I love the stories, the culture, and the emotions they bring. Watching K-Dramas helps me unwind and learn about Korean culture."
+    }
+];
+
+// Add click events to interest photos
+document.querySelectorAll('.interest-card img').forEach((img, index) => {
+    img.style.cursor = 'pointer';
+    img.style.transition = 'transform 0.3s';
+    
+    img.addEventListener('mouseenter', function() {
+        this.style.transform = 'scale(1.05)';
+    });
+    
+    img.addEventListener('mouseleave', function() {
+        this.style.transform = 'scale(1)';
+    });
+    
+    img.addEventListener('click', function() {
+        const data = interestPhotos[index];
+        showImageModal(this.src, data.title, data.description);
+    });
+});
+
+// Function to show image modal
+function showImageModal(imageSrc, title, description) {
+    // Remove existing modal if any
+    const existingModal = document.querySelector('.info-modal');
+    if (existingModal) {
+        existingModal.remove();
+    }
+    
+    // Create modal HTML
+    const modal = document.createElement('div');
+    modal.className = 'info-modal';
+    modal.innerHTML = `
+        <div class="modal-content image-modal">
+            <span class="close-modal">&times;</span>
+            <img src="${imageSrc}" alt="${title}" style="width: 100%; max-height: 400px; object-fit: contain; border-radius: 10px; margin-bottom: 1.5rem;">
+            <h2>${title}</h2>
+            <p>${description}</p>
+        </div>
+    `;
+    
+    document.body.appendChild(modal);
+    
+    // Close modal on click
+    modal.addEventListener('click', function(e) {
+        if (e.target.classList.contains('info-modal') || e.target.classList.contains('close-modal')) {
+            modal.remove();
+        }
+    });
+}

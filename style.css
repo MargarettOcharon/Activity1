@@ -47,7 +47,7 @@ nav a:hover {
 
 /* HERO */
 .hero {
-    background: url("background.jpg") center/cover fixed;
+    background: url("background.jpg") center/cover no-repeat fixed;
     min-height: 90vh;
     display: flex;
     align-items: center;
@@ -271,6 +271,18 @@ footer {
     }
 
     /* HERO */
+    .hero {
+        background-attachment: scroll;
+        background-position: center center;
+        background-size: cover;
+        min-height: 70vh;
+    }
+    
+    .profile-photo {
+        width: 130px;
+        height: 130px;
+    }
+    
     .hero h1 {
         font-size: 1.8rem;
     }
@@ -278,11 +290,7 @@ footer {
     .hero p {
         font-size: 1rem;
     }
-
-    .profile-photo {
-        width: 130px;
-        height: 130px;
-    }
+}
 
     /* INFO */
     .info-grid {
@@ -424,4 +432,26 @@ footer {
 .close-modal:hover {
     color: #fff;
     transform: rotate(90deg);
+}
+
+/* Image Modal Specific Styles */
+.image-modal {
+    max-width: 700px;
+}
+
+.image-modal img {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Hover effect for clickable images */
+.about-photos img,
+.interest-card img {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.about-photos img:hover,
+.interest-card img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(168, 213, 162, 0.4);
 }
