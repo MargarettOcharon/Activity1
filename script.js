@@ -124,20 +124,20 @@ function showModal(title, content) {
 // About Me Photos - Clickable
 const aboutPhotos = [
     {
-        title: "About Photo 1",
-        description: "This photo represents my journey and experiences. It captures a special moment that reflects who I am and what I value in life."
+        title: "Lake Campsite Mabini",
+        description: "This place reminds me of a special experience in my life. It shows what I enjoy and the memories I value."
     },
     {
-        title: "About Photo 2",
-        description: "Another glimpse into my life and personality. This image shows the different sides of me and my adventures."
+        title: "Alicia Panoramic",
+        description: "This captures a wonderful experience from one of my adventures. It reflects my love for exploring and the joy I feel in discovering new places."
     },
     {
-        title: "About Photo 3",
-        description: "A memorable moment that I cherish. This photo holds special meaning and represents an important part of my story."
+        title: "Communal Ranch",
+        description: "This moment is very meaningful to me. It represents an experience that became part of my story."
     },
     {
-        title: "About Photo 4",
-        description: "Capturing the essence of my experiences. This image reflects my growth and the journey I've been on."
+        title: "Lovers Lane",
+        description: "This moment represents the experiences I cherish and the growth I’m thankful for."
     }
 ];
 
