@@ -11,6 +11,11 @@
 <title>Lynn Margarett M. Ocharon | Portfolio</title>
 <link rel="stylesheet" href="style.css">
 </head>
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/Activity1/service-worker.js');
+}
+</script>
 
 <body>
 
